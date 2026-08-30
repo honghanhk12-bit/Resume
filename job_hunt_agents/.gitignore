@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Generated artifacts — keep the folders, not their contents
+data/*
+!data/.gitkeep
+outputs/*
+!outputs/.gitkeep
+
+# Never commit real API keys or a personal resume
+.env
