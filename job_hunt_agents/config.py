@@ -25,7 +25,7 @@ OUTPUTS_DIR = "outputs"
 
 # --- Model / pipeline settings ------------------------------------------------
 MODEL = "claude-3-5-sonnet-20241022"
-MAX_LISTINGS_TO_FETCH = 100
+MAX_LISTINGS_TO_FETCH = 5
 MIN_ATS_SCORE = 80
 MAX_SURGEON_RETRIES = 2
 

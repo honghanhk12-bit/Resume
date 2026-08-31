@@ -13,9 +13,9 @@ from utils.anthropic_client import call_agent_for_json
 
 logger = logging.getLogger("job_hunt_agents")
 
-# Cap per-listing length so a batch of ~100 listings stays within a
-# reasonable context budget (most Serper job descriptions are truncated
-# anyway, but some job boards return very long raw text).
+# Cap per-listing length so a batch of listings stays within a reasonable
+# context budget (most Serper job descriptions are truncated anyway, but
+# some job boards return very long raw text).
 MAX_CHARS_PER_LISTING = 2000
 
 SYSTEM_PROMPT = """You are a job market intelligence analyst. Your job is to \

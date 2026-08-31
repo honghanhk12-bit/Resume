@@ -28,9 +28,10 @@ files.
               outputs/*.docx
 ```
 
-1. **Scout** — searches for up to 100 live job listings (via the Serper.dev
-   Google Jobs API) and extracts the recurring keywords, required/preferred
-   skills, repeated phrasing, seniority signals, and ATS red flags across them.
+1. **Scout** — searches for up to `MAX_LISTINGS_TO_FETCH` live job listings
+   (default 5, via the Serper.dev Google Jobs API) and extracts the
+   recurring keywords, required/preferred skills, repeated phrasing,
+   seniority signals, and ATS red flags across them.
 2. **Strategist** — scores your current resume against that market signal
    (0-100), finds gaps and strengths, and recommends a section order.
 3. **Surgeon** — rewrites every bullet in Google's XYZ format
@@ -81,8 +82,9 @@ ATS parsers choke on.
 
 ### Single tailored resume (aggregate market signal)
 
-Fetches up to 100 listings, builds one market-signal report, and produces
-one tailored resume optimised for that overall role/market:
+Fetches up to `MAX_LISTINGS_TO_FETCH` listings (default 5), builds one
+market-signal report, and produces one tailored resume optimised for that
+overall role/market:
 
 ```bash
 python main.py
@@ -107,8 +109,8 @@ by the Scout, saving:
 - `outputs/batch_summary.csv` — columns: `job_title, company, url, ats_score, keyword_coverage, approved`
 
 Note: batch mode makes several Anthropic API calls per listing (roughly
-3-9 depending on retries), so 100 listings can mean several hundred API
-calls. Use `--max-listings` to control cost while testing.
+3-9 depending on retries), so fetching many listings can mean many dozens
+of API calls. Use `--max-listings` to control cost.
 
 ## Output files
 

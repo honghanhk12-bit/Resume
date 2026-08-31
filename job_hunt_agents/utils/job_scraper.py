@@ -16,6 +16,7 @@ from config import (
     BACKOFF_MULTIPLIER,
     INITIAL_BACKOFF_SECONDS,
     MAX_API_RETRIES,
+    MAX_LISTINGS_TO_FETCH,
     SERPER_API_KEY,
 )
 
@@ -82,7 +83,7 @@ def _request_with_retry(query: str, location: str, page: int) -> Optional[dict]:
 
 
 def search_jobs(
-    role: str, location: str, industry: str = "", max_listings: int = 100
+    role: str, location: str, industry: str = "", max_listings: int = MAX_LISTINGS_TO_FETCH
 ) -> List[JobListing]:
     """Search for live job listings matching a target role.
 
